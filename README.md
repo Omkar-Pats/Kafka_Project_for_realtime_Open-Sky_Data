@@ -12,9 +12,13 @@ Kafka Producer (Go): The main.go file contains the Go-based Kafka producer. It q
 
 Kafka Consumer (Python): The call_consumer.py script serves as the Python-based Kafka consumer. It subscribes to the Kafka topic, consumes the incoming aviation data, and processes it for further analysis or visualization.​
 
-Docker Compose Setup: The docker-compose.yml file orchestrates the setup of the Kafka broker and Zookeeper services, facilitating seamless communication between the producer and consumer within a containerized environment.
+Docker Compose Setup: The docker-compose.yml file orchestrates the setup of the Kafka broker and Zookeeper services, facilitating communication between the producer and consumer within a containerized environment.
 
-## 2. Dashboard
+## 2. Screenshots and format of the data received
 
-![
+![Kafka Server](https://github.com/Omkar-Pats/Kafka_Project_for_realtime_Open-Sky_Data/blob/main/assets/Kafka%20server.png)
+
+The OpenSky API response provides real-time flight data, returning a timestamp and a list of aircraft states. Each state includes details such as the aircraft’s unique ICAO24 transponder address, call sign, origin country, position coordinates (latitude, longitude, and altitude), velocity, heading, vertical rate, and whether the aircraft is on the ground. The response allows tracking of live air traffic, with updates on the aircraft’s movement, last contact time, and transponder status. 
+
+![Dashboard](https://github.com/Omkar-Pats/Kafka_Project_for_realtime_Open-Sky_Data/blob/main/assets/Screenshot.png)
 
