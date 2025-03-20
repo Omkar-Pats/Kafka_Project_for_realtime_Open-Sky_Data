@@ -6,6 +6,8 @@
 
 Used Go lang to create a Kafka producer which queries the Open Sky API and sends out data to the Kafka server, The Kafka server was hosted in a docker container, whenever a new packet is received, the JSON packet is unmarshaled and then sent sequentially to the Kafka Topic, (data is sent sequentially because the packet is too large and I don't wanna overwhelm the the API by continuosly calling since it has a request limit and I don't want to exhaust it) the reason the producer was created in Go was so that the producer could write to the Kafka server faster, later a seperate Kafka consumer was created in Python which pulls data from the Kafka server and aggregate metrics are saved to SQL server, live data is provided to the plotly dashboard which is updated as data is received.
 
+To improve on this, I decided to have an LLM that could use the live data as context to answer user queries about these objects, to this end I used the Ollama docker image to host a Llama 3.2-1B-Instruct model, live data at the initialization of the query was provided to the model as context for answering the prompt.
+
 Key Components:
 
 Kafka Producer (Go): The main.go file contains the Go-based Kafka producer. It queries the OpenSky Network API to retrieve real-time aviation data, processes the JSON responses, and publishes the data to a Kafka topic.​
@@ -22,3 +24,6 @@ The OpenSky API response provides real-time flight data, returning a timestamp a
 
 ![Dashboard](https://github.com/Omkar-Pats/Kafka_Project_for_realtime_Open-Sky_Data/blob/main/assets/Screenshot.png)
 (Each triangle is an aerial object)
+
+![Screenshot of Prompt](https://github.com/Omkar-Pats/Kafka_Project_for_realtime_Open-Sky_Data/blob/main/assets/LLM_question.png)
+(Could achieve better performance through different models)
