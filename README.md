@@ -22,7 +22,7 @@ Docker Compose Setup: The docker-compose.yml file orchestrates the setup of the 
 
 The OpenSky API response provides real-time flight data, returning a timestamp and a list of aircraft states. Each state includes details such as the aircraft’s unique ICAO24 transponder address, call sign, origin country, position coordinates (latitude, longitude, and altitude), velocity, heading, vertical rate, and whether the aircraft is on the ground. The response allows tracking of live air traffic, with updates on the aircraft’s movement, last contact time, and transponder status. 
 
-![Dashboard](assets/Screenshot.png)
+![Dashboard](assets/Screenshot1.png)
 (Each triangle is an aerial object)
 
 ![Screenshot of Prompt](https://github.com/Omkar-Pats/Kafka_Project_for_realtime_Open-Sky_Data/blob/main/assets/LLM_question.png)
