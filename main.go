@@ -54,7 +54,7 @@ func main() {
 }
 
 func fetchAndSendData(ctx context.Context, w *kafka.Writer) {
-	url := "https://opensky-network.org/api/states/all?lamin=45.8389&lomin=5.9962&lamax=47.8229&lomax=10.5226"
+	url := "https://opensky-network.org/api/states/all?lamin=35&lomin=-10&lamax=72&lomax=65"
 	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
 	if err != nil {
 		log.Printf("Error creating request: %v", err)
